@@ -33,7 +33,7 @@ func main() {
 		log.Fatal("PORT is not found in the env.")
 	}
 
-	dbURL := os.Getenv("DB_URL")
+	dbURL := os.Getenv("DATABASE_URL")
 	if dbURL == "" {
 		log.Fatal("DB_URL is not found in the env.")
 	}
