@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: rss-aggregator
+    env: go
+    buildCommand: go build -o main .
+    startCommand: ./main
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://gobackend_gb_user:P0u3Z09UA2J4SshHpTSxbEOTfBHitiau@dpg-cu3omvhopnds738mno90-a.frankfurt-postgres.render.com/gobackend_gb
+      - key: PORT
+        value: 8080

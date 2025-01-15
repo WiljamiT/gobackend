@@ -9,7 +9,8 @@ services:
       POSTGRES_DB: rssagg
     ports:
       - "5432:5432"
-
+    # Note: You don't need to modify the db service as we are using the Render DB for the backend
+  
   backend:
     build: .
     ports:
@@ -19,4 +20,5 @@ services:
     env_file:
       - .env  # Load the .env file
     environment:
-      DB_URL: postgres://u6juess7u9gn7c:p68f29df82e04941bed676600d03c4339bb628b7e7f6a2608f7c62cddd5b56534@c3nv2ev86aje4j.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d3ej44bt3645pe
+      # Ensure that the backend uses the Render database connection
+      DB_URL: ${DATABASE_URL}
